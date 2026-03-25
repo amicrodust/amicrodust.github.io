@@ -8,7 +8,7 @@
     <link href="/2026/03/25/SSH%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%96%B9%E5%BC%8F%EF%BC%9A%E4%BD%BF%E7%94%A8Tmux/"/>
     <url>/2026/03/25/SSH%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%96%B9%E5%BC%8F%EF%BC%9A%E4%BD%BF%E7%94%A8Tmux/</url>
     
-    <content type="html"><![CDATA[<p>在SSH远程更新Arch的过程中，由于连接断开造成了内核损坏，这次经历让我明白了应该在Tmux中执行更新。</p><h1 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h1><blockquote><p>error: file ‘&#x2F;vmlinuz-linux’ not found</p></blockquote><blockquote><p>you need to load the kernel first</p></blockquote><h1 id="修复（使用ArchLinux-ISO）"><a href="#修复（使用ArchLinux-ISO）" class="headerlink" title="修复（使用ArchLinux ISO）"></a>修复（使用ArchLinux ISO）</h1><ol><li>进入Live环境</li><li>挂载分区<blockquote><p>mount &#x2F;dev&#x2F;sda2 &#x2F;mnt</p></blockquote></li><li>进入系统<blockquote><p>arch-chroot &#x2F;mnt</p></blockquote></li><li>重新安装内核<blockquote><p>pacman -S linux linux-firmware</p></blockquote></li><li>手动重建grub（可选）<blockquote><p>grub-install &#x2F;dev&#x2F;sda</p></blockquote></li></ol><blockquote><p>grub-mkconfig -o &#x2F;boot&#x2F;grub&#x2F;grub.cfg</p></blockquote><ol start="6"><li>重启<blockquote><p>exit</p></blockquote></li></ol><blockquote><p>umount -R &#x2F;mnt</p></blockquote><blockquote><p>reboot</p></blockquote><h1 id="使用Tmux更新系统"><a href="#使用Tmux更新系统" class="headerlink" title="使用Tmux更新系统"></a>使用Tmux更新系统</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><blockquote><p>pacman -S tmux</p></blockquote><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol><li>新建Tmux会话<blockquote><p>tmux</p></blockquote></li><li>更新系统</li></ol><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><ul><li>关于Tmux的详细信息 <a href="Tmux-ArchWiki">https://wiki.archlinuxcn.org/wiki/Tmux</a></li><li>Tmux的仓库 <a href="Tmux-Github">https://github.com/tmux/tmux</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<p>在SSH远程更新Arch的过程中，由于连接断开造成了内核损坏，这次经历让我明白了应该在Tmux中执行更新。</p><h1 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h1><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs subunit"><span class="hljs-keyword">error: </span>file &#x27;/vmlinuz-linux&#x27; not found<br>you need to load the kernel first<br></code></pre></td></tr></table></figure><h1 id="修复（使用ArchLinux-ISO）"><a href="#修复（使用ArchLinux-ISO）" class="headerlink" title="修复（使用ArchLinux ISO）"></a>修复（使用ArchLinux ISO）</h1><ol><li>进入Live环境</li><li>挂载分区<blockquote><p>mount &#x2F;dev&#x2F;sda2 &#x2F;mnt</p></blockquote></li><li>进入系统<blockquote><p>arch-chroot &#x2F;mnt</p></blockquote></li><li>重新安装内核<blockquote><p>pacman -S linux linux-firmware</p></blockquote></li><li>手动重建grub（可选）<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">grub-install <span class="hljs-regexp">/dev/</span>sda <br>grub-mkconfig -o <span class="hljs-regexp">/boot/g</span>rub/grub.cfg<br></code></pre></td></tr></table></figure></li><li>重启<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-keyword">exit</span><br>umount -R /mnt<br>reboot<br></code></pre></td></tr></table></figure></li></ol><h1 id="使用Tmux更新系统"><a href="#使用Tmux更新系统" class="headerlink" title="使用Tmux更新系统"></a>使用Tmux更新系统</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><blockquote><p>pacman -S tmux</p></blockquote><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol><li>新建Tmux会话<blockquote><p>tmux</p></blockquote></li><li>更新系统</li></ol><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><ul><li>关于Tmux的详细信息 <a href="Tmux-ArchWiki">https://wiki.archlinuxcn.org/wiki/Tmux</a></li><li>Tmux的仓库 <a href="Tmux-Github">https://github.com/tmux/tmux</a></li></ul>]]></content>
     
     
     <categories>
@@ -25,35 +25,6 @@
       <tag>SSH</tag>
       
       <tag>Tmux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>关于学习路线</title>
-    <link href="/2026/03/21/%E5%85%B3%E4%BA%8E%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
-    <url>/2026/03/21/%E5%85%B3%E4%BA%8E%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</url>
-    
-    <content type="html"><![CDATA[<p>待编辑···</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>学习</category>
-      
-      <category>Study</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>学习</tag>
-      
-      <tag>Learning</tag>
       
     </tags>
     
