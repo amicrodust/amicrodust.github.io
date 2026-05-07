@@ -8,7 +8,7 @@
     <link href="/2026/05/07/HMCL%E5%90%AF%E5%8A%A8%E5%99%A8%E6%97%A0%E6%B3%95%E4%B8%8B%E8%BD%BD%E4%BE%9D%E8%B5%96%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <url>/2026/05/07/HMCL%E5%90%AF%E5%8A%A8%E5%99%A8%E6%97%A0%E6%B3%95%E4%B8%8B%E8%BD%BD%E4%BE%9D%E8%B5%96%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     
-    <content type="html"><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">系统：ArchLinux<br></code></pre></td></tr></table></figure><p><img src="/_posts/HMCL%E5%90%AF%E5%8A%A8%E5%99%A8%E6%97%A0%E6%B3%95%E4%B8%8B%E8%BD%BD%E4%BE%9D%E8%B5%96%E7%9A%84%E9%97%AE%E9%A2%98/%E6%9C%AA%E8%83%BD%E4%B8%8B%E8%BD%BD%E6%B8%B8%E6%88%8F%E4%BE%9D%E8%B5%96.png" alt="未能下载游戏依赖" title="未能下载游戏依赖"></p><p>奇奇怪怪的问题  又是权限问题呢~</p><p>直接&#96;sudo&#96;&#96;就好啦~</p>]]></content>
+    <content type="html"><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">系统：ArchLinux<br></code></pre></td></tr></table></figure><p><img src="/a/a.png" alt="问题截图"></p><p>奇奇怪怪的问题  又是权限问题呢~</p><p>直接&#96;sudo&#96;&#96;就好啦~</p>]]></content>
     
     
     <categories>
