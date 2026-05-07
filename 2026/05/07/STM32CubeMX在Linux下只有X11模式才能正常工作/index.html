@@ -19,25 +19,25 @@
   <meta name="author" content="Wilbur">
   <meta name="keywords" content="">
   
-    <meta name="description" content="踩坑日记 在使用串口调试助手的时候，一直连不上串口设备。【权限问题】解决：将用户加入uucp用户组sudo usermod -aG uucp $USER    组 影响文件 作用    uucp &#x2F;dev&#x2F;ttyS[0-9]+, &#x2F;dev&#x2F;tts&#x2F;[0-9]+, &#x2F;dev&#x2F;ttyUSB[0-9]+, &#x2F;dev&amp;#x2F">
+    <meta name="description" content="最近想在Linux下折腾stm32，我用的是 Arch + Niri 的组合，直接打开CubeMX的话，会有界面大小不匹配和白屏的问题 装了gnome就正常了，因为这种完整的桌面环境对显示模式的控制更完善 这是因为CubeMX对Wayland支持并不完善，需要设置以xWayland运行 在启动脚本中加入GDK_BACKEND&#x3D;x11 选择完善的桌面环境(比如KDE gnome)则可以避免此问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ArchLinux下的串口设备权限管理：&#39;uucp&#39;组">
-<meta property="og:url" content="http://example.com/2026/05/07/ArchLinux%E4%B8%8B%E7%9A%84%E4%B8%B2%E5%8F%A3%E8%AE%BE%E5%A4%87%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%EF%BC%9A-uucp-%E7%BB%84/index.html">
+<meta property="og:title" content="STM32CubeMX在Linux下只有X11模式才能正常工作">
+<meta property="og:url" content="http://example.com/2026/05/07/STM32CubeMX%E5%9C%A8Linux%E4%B8%8B%E5%8F%AA%E6%9C%89X11%E6%A8%A1%E5%BC%8F%E6%89%8D%E8%83%BD%E6%AD%A3%E5%B8%B8%E5%B7%A5%E4%BD%9C/index.html">
 <meta property="og:site_name" content="Wilbur&#39;s Blog">
-<meta property="og:description" content="踩坑日记 在使用串口调试助手的时候，一直连不上串口设备。【权限问题】解决：将用户加入uucp用户组sudo usermod -aG uucp $USER    组 影响文件 作用    uucp &#x2F;dev&#x2F;ttyS[0-9]+, &#x2F;dev&#x2F;tts&#x2F;[0-9]+, &#x2F;dev&#x2F;ttyUSB[0-9]+, &#x2F;dev&amp;#x2F">
+<meta property="og:description" content="最近想在Linux下折腾stm32，我用的是 Arch + Niri 的组合，直接打开CubeMX的话，会有界面大小不匹配和白屏的问题 装了gnome就正常了，因为这种完整的桌面环境对显示模式的控制更完善 这是因为CubeMX对Wayland支持并不完善，需要设置以xWayland运行 在启动脚本中加入GDK_BACKEND&#x3D;x11 选择完善的桌面环境(比如KDE gnome)则可以避免此问题">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-05-07T04:57:29.000Z">
-<meta property="article:modified_time" content="2026-05-07T10:03:36.094Z">
+<meta property="article:published_time" content="2026-05-07T10:07:47.000Z">
+<meta property="article:modified_time" content="2026-05-07T13:07:38.967Z">
 <meta property="article:author" content="Wilbur">
 <meta property="article:tag" content="ArchLinux">
-<meta property="article:tag" content="串口设备">
-<meta property="article:tag" content="stm32">
-<meta property="article:tag" content="用户组">
+<meta property="article:tag" content="CubeMX">
+<meta property="article:tag" content="Niri">
+<meta property="article:tag" content="XWayland">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>ArchLinux下的串口设备权限管理：&#39;uucp&#39;组 - Wilbur&#39;s Blog</title>
+  <title>STM32CubeMX在Linux下只有X11模式才能正常工作 - Wilbur&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -306,7 +306,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="ArchLinux下的串口设备权限管理：&#39;uucp&#39;组"></span>
+            <span id="subtitle" data-typed-text="STM32CubeMX在Linux下只有X11模式才能正常工作"></span>
           
         </div>
 
@@ -317,8 +317,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-05-07 12:57" pubdate>
-          2026年5月7日 下午
+        <time datetime="2026-05-07 18:07" pubdate>
+          2026年5月7日 晚上
         </time>
       </span>
     
@@ -329,7 +329,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          320 字
+          189 字
         
       </span>
     
@@ -340,7 +340,7 @@
         
         
         
-          3 分钟
+          2 分钟
         
       </span>
     
@@ -379,30 +379,16 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">ArchLinux下的串口设备权限管理：&#39;uucp&#39;组</h1>
+            <h1 id="seo-header">STM32CubeMX在Linux下只有X11模式才能正常工作</h1>
             
             
               <div class="markdown-body">
                 
-                <p><del>踩坑日记</del></p>
-<h2 id="在使用串口调试助手的时候，一直连不上串口设备。【权限问题】"><a href="#在使用串口调试助手的时候，一直连不上串口设备。【权限问题】" class="headerlink" title="在使用串口调试助手的时候，一直连不上串口设备。【权限问题】"></a>在使用串口调试助手的时候，一直连不上串口设备。【权限问题】</h2><h1 id="解决：将用户加入uucp用户组"><a href="#解决：将用户加入uucp用户组" class="headerlink" title="解决：将用户加入uucp用户组"></a>解决：将用户加入uucp用户组</h1><p><code>sudo usermod -aG uucp $USER</code></p>
-<table>
-<thead>
-<tr>
-<th>组</th>
-<th>影响文件</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>uucp</td>
-<td>&#x2F;dev&#x2F;ttyS[0-9]+, &#x2F;dev&#x2F;tts&#x2F;[0-9]+, &#x2F;dev&#x2F;ttyUSB[0-9]+, &#x2F;dev&#x2F;ttyACM[0-9]+, &#x2F;dev&#x2F;rfcomm[0-9]+</td>
-<td>串口和 USB 设备，例如猫、手柄 RS-232&#x2F;串口。</td>
-</tr>
-</tbody></table>
-<p>对于其它组的作用，可见Archwiki<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84#%E7%BE%A4%E7%BB%84%E5%88%97%E8%A1%A8" title="群组列表">用户和用户组</a></p>
-<p><em>值得一提的是，Arch中并没有dialout这个组。</em></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://bbs.archlinux.org/viewtopic.php?id=222093">ArchLinux Forums</a></p>
+                <p>最近想在Linux下折腾stm32，我用的是 <code>Arch + Niri</code> 的组合，直接打开CubeMX的话，会有界面大小不匹配和白屏的问题</p>
+<p><del>装了gnome就正常了，因为这种完整的桌面环境对显示模式的控制更完善</del></p>
+<p>这是因为CubeMX对Wayland支持并不完善，需要设置以xWayland运行</p>
+<p>在启动脚本中加入<code>GDK_BACKEND=x11</code></p>
+<p><em>选择完善的桌面环境(比如KDE gnome)则可以避免此问题</em></p>
 
                 
               </div>
@@ -438,11 +424,11 @@
       
         <a href="/tags/ArchLinux/" class="print-no-link">#ArchLinux</a>
       
-        <a href="/tags/%E4%B8%B2%E5%8F%A3%E8%AE%BE%E5%A4%87/" class="print-no-link">#串口设备</a>
+        <a href="/tags/CubeMX/" class="print-no-link">#CubeMX</a>
       
-        <a href="/tags/stm32/" class="print-no-link">#stm32</a>
+        <a href="/tags/Niri/" class="print-no-link">#Niri</a>
       
-        <a href="/tags/%E7%94%A8%E6%88%B7%E7%BB%84/" class="print-no-link">#用户组</a>
+        <a href="/tags/XWayland/" class="print-no-link">#XWayland</a>
       
     </div>
   
@@ -454,8 +440,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>ArchLinux下的串口设备权限管理：&#39;uucp&#39;组</div>
-      <div>http://example.com/2026/05/07/ArchLinux下的串口设备权限管理：-uucp-组/</div>
+      <div>STM32CubeMX在Linux下只有X11模式才能正常工作</div>
+      <div>http://example.com/2026/05/07/STM32CubeMX在Linux下只有X11模式才能正常工作/</div>
     </div>
     <div class="license-meta">
       
@@ -511,9 +497,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/05/07/STM32CubeMX%E5%9C%A8Linux%E4%B8%8B%E5%8F%AA%E6%9C%89X11%E6%A8%A1%E5%BC%8F%E6%89%8D%E8%83%BD%E6%AD%A3%E5%B8%B8%E5%B7%A5%E4%BD%9C/" title="STM32CubeMX在Linux下只有X11模式才能正常工作">
+                      <a href="/2026/05/07/HMCL%E5%90%AF%E5%8A%A8%E5%99%A8%E6%97%A0%E6%B3%95%E4%B8%8B%E8%BD%BD%E4%BE%9D%E8%B5%96%E7%9A%84%E9%97%AE%E9%A2%98/" title="HMCL启动器无法下载依赖的问题">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">STM32CubeMX在Linux下只有X11模式才能正常工作</span>
+                        <span class="hidden-mobile">HMCL启动器无法下载依赖的问题</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -521,8 +507,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/04/15/%E3%80%8A%E5%9B%B4%E5%9F%8E%E3%80%8B/" title="《围城》">
-                        <span class="hidden-mobile">《围城》</span>
+                      <a href="/2026/05/07/ArchLinux%E4%B8%8B%E7%9A%84%E4%B8%B2%E5%8F%A3%E8%AE%BE%E5%A4%87%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%EF%BC%9A-uucp-%E7%BB%84/" title="ArchLinux下的串口设备权限管理：&#39;uucp&#39;组">
+                        <span class="hidden-mobile">ArchLinux下的串口设备权限管理：&#39;uucp&#39;组</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

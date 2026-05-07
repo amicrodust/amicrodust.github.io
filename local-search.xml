@@ -4,6 +4,66 @@
   
   
   <entry>
+    <title>HMCL启动器无法下载依赖的问题</title>
+    <link href="/2026/05/07/HMCL%E5%90%AF%E5%8A%A8%E5%99%A8%E6%97%A0%E6%B3%95%E4%B8%8B%E8%BD%BD%E4%BE%9D%E8%B5%96%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <url>/2026/05/07/HMCL%E5%90%AF%E5%8A%A8%E5%99%A8%E6%97%A0%E6%B3%95%E4%B8%8B%E8%BD%BD%E4%BE%9D%E8%B5%96%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">系统：ArchLinux<br></code></pre></td></tr></table></figure><p><img src="/HMCL%E5%90%AF%E5%8A%A8%E5%99%A8%E6%97%A0%E6%B3%95%E4%B8%8B%E8%BD%BD%E4%BE%9D%E8%B5%96%E7%9A%84%E9%97%AE%E9%A2%98/%E6%9C%AA%E8%83%BD%E4%B8%8B%E8%BD%BD%E6%B8%B8%E6%88%8F%E4%BE%9D%E8%B5%96.png" alt="未能下载游戏依赖"></p><p>奇奇怪怪的问题  又是权限问题呢~<br>直接&#96;sudo&#96;&#96;就好啦~</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Minecraft</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MC</tag>
+      
+      <tag>HMCL</tag>
+      
+      <tag>启动器</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>STM32CubeMX在Linux下只有X11模式才能正常工作</title>
+    <link href="/2026/05/07/STM32CubeMX%E5%9C%A8Linux%E4%B8%8B%E5%8F%AA%E6%9C%89X11%E6%A8%A1%E5%BC%8F%E6%89%8D%E8%83%BD%E6%AD%A3%E5%B8%B8%E5%B7%A5%E4%BD%9C/"/>
+    <url>/2026/05/07/STM32CubeMX%E5%9C%A8Linux%E4%B8%8B%E5%8F%AA%E6%9C%89X11%E6%A8%A1%E5%BC%8F%E6%89%8D%E8%83%BD%E6%AD%A3%E5%B8%B8%E5%B7%A5%E4%BD%9C/</url>
+    
+    <content type="html"><![CDATA[<p>最近想在Linux下折腾stm32，我用的是 <code>Arch + Niri</code> 的组合，直接打开CubeMX的话，会有界面大小不匹配和白屏的问题</p><p><del>装了gnome就正常了，因为这种完整的桌面环境对显示模式的控制更完善</del></p><p>这是因为CubeMX对Wayland支持并不完善，需要设置以xWayland运行</p><p>在启动脚本中加入<code>GDK_BACKEND=x11</code></p><p><em>选择完善的桌面环境(比如KDE gnome)则可以避免此问题</em></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ArchLinux</tag>
+      
+      <tag>CubeMX</tag>
+      
+      <tag>Niri</tag>
+      
+      <tag>XWayland</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ArchLinux下的串口设备权限管理：&#39;uucp&#39;组</title>
     <link href="/2026/05/07/ArchLinux%E4%B8%8B%E7%9A%84%E4%B8%B2%E5%8F%A3%E8%AE%BE%E5%A4%87%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%EF%BC%9A-uucp-%E7%BB%84/"/>
     <url>/2026/05/07/ArchLinux%E4%B8%8B%E7%9A%84%E4%B8%B2%E5%8F%A3%E8%AE%BE%E5%A4%87%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%EF%BC%9A-uucp-%E7%BB%84/</url>
