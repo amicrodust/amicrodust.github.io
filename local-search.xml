@@ -4,6 +4,39 @@
   
   
   <entry>
+    <title>CubeMX与TUN的羁绊 &gt;:(</title>
+    <link href="/2026/05/08/CubeMX%E4%B8%8ETUN%E7%9A%84%E7%BE%81%E7%BB%8A/"/>
+    <url>/2026/05/08/CubeMX%E4%B8%8ETUN%E7%9A%84%E7%BE%81%E7%BB%8A/</url>
+    
+    <content type="html"><![CDATA[<p><del>踩坑日记</del></p><p>如果代理软件开着TUN模式，点击CubeMX的”ACEESS TO MCU SELECTOR”后，数据更新会失败，原因未知🤔，如图：<br><img src="/2026/05/08/CubeMX%E4%B8%8ETUN%E7%9A%84%E7%BE%81%E7%BB%8A/1.png" alt="ERROR"><br><img src="/2026/05/08/CubeMX%E4%B8%8ETUN%E7%9A%84%E7%BE%81%E7%BB%8A/2.png" alt="ERROR"><br>关闭TUN可正常工作</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ArchLinux</tag>
+      
+      <tag>Windows</tag>
+      
+      <tag>CubeMX</tag>
+      
+      <tag>TUN</tag>
+      
+      <tag>代理</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>HMCL启动器无法下载依赖的问题</title>
     <link href="/2026/05/07/HMCL%E5%90%AF%E5%8A%A8%E5%99%A8%E6%97%A0%E6%B3%95%E4%B8%8B%E8%BD%BD%E4%BE%9D%E8%B5%96%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <url>/2026/05/07/HMCL%E5%90%AF%E5%8A%A8%E5%99%A8%E6%97%A0%E6%B3%95%E4%B8%8B%E8%BD%BD%E4%BE%9D%E8%B5%96%E7%9A%84%E9%97%AE%E9%A2%98/</url>
