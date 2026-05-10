@@ -22,9 +22,9 @@
       
       <tag>ArchLinux</tag>
       
-      <tag>Windows</tag>
-      
       <tag>CubeMX</tag>
+      
+      <tag>Windows</tag>
       
       <tag>TUN</tag>
       
@@ -66,11 +66,11 @@
   
   
   <entry>
-    <title>STM32CubeMX在Linux下只有X11模式才能正常工作</title>
-    <link href="/2026/05/07/STM32CubeMX%E5%9C%A8Linux%E4%B8%8B%E5%8F%AA%E6%9C%89X11%E6%A8%A1%E5%BC%8F%E6%89%8D%E8%83%BD%E6%AD%A3%E5%B8%B8%E5%B7%A5%E4%BD%9C/"/>
-    <url>/2026/05/07/STM32CubeMX%E5%9C%A8Linux%E4%B8%8B%E5%8F%AA%E6%9C%89X11%E6%A8%A1%E5%BC%8F%E6%89%8D%E8%83%BD%E6%AD%A3%E5%B8%B8%E5%B7%A5%E4%BD%9C/</url>
+    <title>STM32CubeMX在Niri下需要特殊设置才能正常显示</title>
+    <link href="/2026/05/07/STM32CubeMX%E5%9C%A8Niri%E4%B8%8B%E9%9C%80%E8%A6%81%E7%89%B9%E6%AE%8A%E8%AE%BE%E7%BD%AE%E6%89%8D%E8%83%BD%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA/"/>
+    <url>/2026/05/07/STM32CubeMX%E5%9C%A8Niri%E4%B8%8B%E9%9C%80%E8%A6%81%E7%89%B9%E6%AE%8A%E8%AE%BE%E7%BD%AE%E6%89%8D%E8%83%BD%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA/</url>
     
-    <content type="html"><![CDATA[<p>最近想在Linux下折腾stm32，我用的是 <code>Arch + Niri</code> 的组合，直接打开CubeMX的话，会有界面大小不匹配和白屏的问题</p><p><del>装了gnome就正常了，因为这种完整的桌面环境对显示模式的控制更完善</del></p><p>这是因为CubeMX对Wayland支持并不完善，需要设置以xWayland运行</p><p>在启动脚本中加入<code>GDK_BACKEND=x11</code></p><p><em>选择完善的桌面环境(比如KDE gnome)则可以避免此问题</em></p>]]></content>
+    <content type="html"><![CDATA[<hr><p>最近想在Linux下折腾stm32，我用的是 <code>Arch + Niri</code> 的组合，直接打开CubeMX的话，会有以下问题：</p><ul><li>界面大小不匹配</li><li>白屏的问题</li><li>窗口闪烁</li></ul><p>在启动脚本中加入<code>export _JAVA_AWT_WM_NONREPARENTING=1</code>可正常工作</p><p>我并不了解java，所以对其具体作用并不清楚</p><p>选择完善的桌面环境(比如KDE gnome)则可以避免此问题</p><hr><p><em>以下内容没有参考价值</em></p><p><del>装了gnome就正常了，因为这种完整的桌面环境对显示模式的控制更完善？</del></p><p><del>这是因为CubeMX对Wayland支持并不完善，需要设置以xWayland运行</del></p><p><del>在启动脚本中加入<code>GDK_BACKEND=x11</code></del></p>]]></content>
     
     
     <categories>
